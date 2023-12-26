@@ -21,8 +21,18 @@ console.log(myEvery(['book', 'door'], hasO));           // true
 console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 *******************************************************************************/
 
-let myEvery = function() {
+let myEvery = function(array,callback) {
+    let every = true;
 
+    for(let i = 0; i < array.length; i++){
+        let currentValue = array[i];
+
+        if(!callback(currentValue)){
+            every = false;
+        }
+    }
+
+    return every; 
 };
 
 

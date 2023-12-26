@@ -18,8 +18,13 @@ mapMutator(arr2, function (el, i) {
 console.log(arr2); // [ 0, 9, 20 ]
 *******************************************************************************/
 
-let mapMutator = function() {
+let mapMutator = function(array,callback) {
+    for(let i = 0; i < array.length; i++){
+        let currentItem = callback(array[i],i);
+        array[i] = currentItem;
+    }
 
+    return array;
 };
 
 

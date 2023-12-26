@@ -25,13 +25,19 @@ let result2 = sentenceMapper("this is pretty cool right", removeVowels);
 console.log(result2); // 'ths s prtty cl rght'
 *******************************************************************************/
 
-let sentenceMapper = function() {
+let sentenceMapper = function(sentence,callback) {
+    let sentenceArray = sentence.split(" ");
+    let newSentence = [];
 
+    for(let i = 0; i < sentenceArray.length; i++){
+        let currentWord = sentenceArray[i];
+        let wordToAdd = callback(currentWord);
+        newSentence.push(wordToAdd);
+    }
+
+    newSentence = newSentence.join(" ");
+    return newSentence;
 };
-
-
-
-
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

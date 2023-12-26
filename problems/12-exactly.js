@@ -27,8 +27,23 @@ console.log(result4); // true
 
 *******************************************************************************/
 
-let exactly = function() {
+let exactly = function(array,numberOfTrues, callback) {
+    let trueAmount = 0;
 
+    for(let i = 0; i < array.length; i++){
+        let currentValue = array[i];
+
+        if(callback(currentValue)){
+            trueAmount++;
+        }
+    }
+
+    if(trueAmount === numberOfTrues){
+        return true;
+    }
+    else{
+        return false; 
+    }
 };
 
 
