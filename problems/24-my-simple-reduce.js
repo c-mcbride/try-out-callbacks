@@ -34,13 +34,15 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   optional initial accumulator
 *******************************************************************************/
 
-let mySimpleReduce = function() {
+let mySimpleReduce = function(array,callback) {
+    let accumulator = array[0];
+    for(let i = 1; i < array.length; i++){
+        let currentElement = array[i];
+        accumulator = callback(accumulator, currentElement);
+    }
 
+    return accumulator;
 };
-
-
-
-
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
